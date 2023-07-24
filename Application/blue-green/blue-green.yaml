@@ -1,5 +1,5 @@
 kind: Route
-apiVersion: route.openshift.io/v2
+apiVersion: route.openshift.io/v1
 metadata:
   name: blue-green-route
   annotations:
