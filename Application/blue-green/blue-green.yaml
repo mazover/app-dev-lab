@@ -13,4 +13,4 @@ spec:
   alternateBackends:
   - kind: Service
     name: user17-hello-world
-    weight: 0
+    weight: 10
