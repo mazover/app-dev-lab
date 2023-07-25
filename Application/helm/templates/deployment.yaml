@@ -44,8 +44,8 @@ spec:
                 successThreshold: 1
                 failureThreshold: 3
           env:
-             - name: PORT
-                value: {{ .Values.containers.containerPort | quote }}
+                 - name: PORT
+                    value: {{ .Values.containers.containerPort | quote }}
           terminationMessagePath: /dev/termination-log
           name: {{ .Release.Name }}
           ports:
