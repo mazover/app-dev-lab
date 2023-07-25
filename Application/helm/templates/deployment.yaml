@@ -33,7 +33,7 @@ spec:
             periodSeconds: 10 # the abount of time to wait between checks
             successThreshold: 1 # count to decalre seccessfull 
             failureThreshold: 3 # count to decalre failure
-            livenessProbe:
+          livenessProbe:
               httpGet:
                 path: /health/liveliness
                 port: {{ .Values.containers.containerPort }}
@@ -43,7 +43,7 @@ spec:
                 periodSeconds: 10
                 successThreshold: 1
                 failureThreshold: 3
-              env:
+          env:
                 - name: PORT
                   value: {{ .Values.containers.containerPort | quote }}
           terminationMessagePath: /dev/termination-log
@@ -57,8 +57,8 @@ spec:
           - name: index-html
             mountPath: /tmp/html # this will mount the html.index file to it application location
           # update with the image you build in part 1
-            image: {{ .Values.containers.image }}: {{ .Values.containers.tag }}
-            restartPolicy: Always
+          image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
+          restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
     type: RollingUpdate
