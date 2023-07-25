@@ -56,7 +56,7 @@ spec:
           volumeMounts:
           - name: index-html
             mountPath: /tmp/html # this will mount the html.index file to it application location
-      image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
+            image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
