@@ -26,9 +26,9 @@ spec:
           volumeMounts:
           - name: index-html
             mountPath: /tmp/html # this will mount the html.index file to it application location
-          - resources: {}
+        - resources: {}
           terminationMessagePath: /dev/termination-log
-          name: {{ .Release.Name }}
+          - name: {{ .Release.Name }}
           ports:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
